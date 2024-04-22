@@ -31,6 +31,14 @@ public class Converter {
             
             }
             String minuteString="";//empty string before finance
+            int j;
+            for(j=0;j<minuteArray.length;j++){
+                if(j==(minute/5)){//divided by five because seconds is a multiple of 5
+                    minuteString=minuteArray[j];
+
+                }
+            }
+            System.out.println("the minutes are: "+ minuteString);
 
         }    
        
