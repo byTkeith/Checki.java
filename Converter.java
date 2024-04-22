@@ -41,10 +41,10 @@ public class Converter {
                 }
             }
             if(minuteString.equals(minuteArray[0]) && minute!=0){
-                System.out.println("about "+hour+" "+minuteArray[0]);
+                System.out.println("about "+hourString+" "+minuteArray[0]);
             }
             else if(minuteString.equals(minuteArray[0]) && minute==0){
-             System.out.println(hour+" "+minuteArray[0]);
+             System.out.println(hourString+" "+minuteArray[0]);
             }
             else if(minuteCount>0 && minuteCount<7 && minute%5!=0 && minute<30){
                 System.out.println("about "+minuteString+" past "+hourString);
@@ -52,11 +52,11 @@ public class Converter {
             else if(minuteCount>0 && minuteCount<7 && minute%5==0 && minute<30){
                 System.out.println(minuteString+" past "+hourString);
             }
-            else if(minuteCount>6 && minute%5!=0 && minute>30){
-                System.out.println("about "+minuteString+" to "+(minuteArray[hour+1]));
+            else if(minuteCount>0 && minute%5!=0 && minute>30){
+                System.out.println("about "+minuteString+" to "+(hourArray[hour+1]));
             }
-            else if(minuteCount>6 && minute%5==0 && minute>30){
-                System.out.println(minuteString+" to "+(minuteArray[hour+1]));
+            else if(minuteCount>0 && minute%5==0 && minute>30){
+                System.out.println(minuteString+" to "+(hourArray[hour+1]));
             }
 
 
