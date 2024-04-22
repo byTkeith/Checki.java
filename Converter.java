@@ -2,16 +2,16 @@ import java.util.*;
 import java.io.*;
 public class Converter {
     public static void main(String[] args) {
-        String[] hourArray={"one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"}; 
+        String[] hourArray={"one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen"}; 
         String[] minuteArray={"o'clock","five","ten","quater","twenty","twenty-five","half","twenty-five","twenty","quarter","ten","five","o'clock"};
         Scanner scanner= new Scanner(System.in);
         System.out.println("Enter a time or 'quit':");
-        String input= scanner.nextLine();
+        String input=scanner.nextLine();
         int hour=0;
         int minute=0;
         while(!input.equalsIgnoreCase("Quit")) {
-            System.out.println("Enter a time or 'quit':");
-            input= scanner.nextLine();
+            // System.out.println("Enter a time or 'quit':");
+            // input= scanner.nextLine();
             String[] splitTime=input.split(":");//splits the time strings into hours and minutes
             hour= Integer.parseInt(splitTime[0]);//the hour part converted to an int
             minute= Integer.parseInt(splitTime[1]);//converts the minutes of the time into in
@@ -38,11 +38,29 @@ public class Converter {
 
                 }
             }
-            System.out.println("the minutes are: "+ minuteString);
+            if(minuteString.equals(minuteArray[0]) && minute!=0){
+                System.out.println("about "+hour+" "+minuteArray[0]);
+            }
+            else if(minuteString.equals(minuteArray[0]) && minute==0){
+             System.out.println(hour+" "+minuteArray[0]);
+            }
+            else if(minuteString.equals(minuteArray[1]) || minuteString.equals(minuteArray[2])){
+                System.out.println("about "+minuteString+" past "+hour);
+            }
+
+
+
+
+
+
+
+            System.out.println("Enter a time or 'quit':");
+            input= scanner.nextLine();
 
         }    
        
         
     }
+}    
     
-}
+
