@@ -6,7 +6,8 @@ public class Converter {
         System.out.println("Enter a time or 'quit':");
         String input= scanner.nextLine();
         while (!input.equalsIgnoreCase("Quit")) {
-            String[] splitTime=input.split(":");
+            String[] splitTime=input.split(":");//splits the time strings into hours and minutes
+            int hour= Integer.parseInt(splitTime[1]);//the hour part converted to an int
             
         }
     }
