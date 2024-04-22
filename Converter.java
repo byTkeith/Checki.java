@@ -46,17 +46,17 @@ public class Converter {
             else if(minuteString.equals(minuteArray[0]) && minute==0){
              System.out.println(hour+" "+minuteArray[0]);
             }
-            else if(minuteCount>0 && minuteCount<7 && minute%5!=0){
-                System.out.println("about "+minuteString+" past "+hour);
+            else if(minuteCount>0 && minuteCount<7 && minute%5!=0 && minute<30){
+                System.out.println("about "+minuteString+" past "+hourString);
             }
-            else if(minuteCount>0 && minuteCount<7 && minute%5==0){
-                System.out.println(minuteString+" past "+hour);
+            else if(minuteCount>0 && minuteCount<7 && minute%5==0 && minute<30){
+                System.out.println(minuteString+" past "+hourString);
             }
-            else if(minuteCount>6 && minute%5!=0){
-                System.out.println("about "+minuteString+" to "+(hour+1));
+            else if(minuteCount>6 && minute%5!=0 && minute>30){
+                System.out.println("about "+minuteString+" to "+(minuteArray[hour+1]));
             }
-            else if(minuteCount>6 && minute%5==0){
-                System.out.println(minuteString+" to "+(hour+1));
+            else if(minuteCount>6 && minute%5==0 && minute>30){
+                System.out.println(minuteString+" to "+(minuteArray[hour+1]));
             }
 
 
