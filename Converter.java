@@ -17,7 +17,10 @@ public class Converter {
              * anytime above a 5 mutiple uses the next multiple of five or the previous depending on how far it is
              */
             int i;
-            for(i=0;i<hour;i++){}
+            String hourString="";//initiates the hour string to an empty string
+            for(i=0;i<hour;i++){
+
+            }
 
         }
     }
