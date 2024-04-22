@@ -55,7 +55,9 @@ public class Converter {
             else if(minuteCount>6 && minute%5!=0){
                 System.out.println("about "+minuteString+" to "+(hour+1));
             }
-            else if(minuteCount>6 && mi)
+            else if(minuteCount>6 && minute%5==0){
+                System.out.println(minuteString+" to "+(hour+1));
+            }
 
 
 
