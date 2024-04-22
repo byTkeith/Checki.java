@@ -2,6 +2,8 @@ import java.util.*;
 import java.io.*;
 public class Converter {
     public static void main(String[] args) {
+        String[] hourArray={"one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve"}; 
+        String[] minuteArray
         Scanner scanner= new Scanner(System.in);
         System.out.println("Enter a time or 'quit':");
         String input= scanner.nextLine();
@@ -14,6 +16,7 @@ public class Converter {
              * that is any time below 5 is 'O'clock'
              * anytime above a 5 mutiple uses the next multiple of five or the previous depending on how far it is
              */
+
         }
     }
     
