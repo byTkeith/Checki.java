@@ -9,7 +9,9 @@ public class Converter {
         String input= scanner.nextLine();
         int hour=0;
         int minute=0;
-        if(!input.equalsIgnoreCase("Quit")) {
+        while(!input.equalsIgnoreCase("Quit")) {
+            System.out.println("Enter a time or 'quit':");
+            input= scanner.nextLine();
             String[] splitTime=input.split(":");//splits the time strings into hours and minutes
             hour= Integer.parseInt(splitTime[0]);//the hour part converted to an int
             minute= Integer.parseInt(splitTime[1]);//converts the minutes of the time into in
@@ -18,17 +20,20 @@ public class Converter {
              * that is any time below 5 is 'O'clock'
              * anytime above a 5 mutiple uses the next multiple of five or the previous depending on how far it is
              */
-        }
-        int i;
-        String hourString="";//initiates the hour string to an empty string
-        for(i=0;i<hourArray.length;i++){
-            if(i==hour){
-                hourString=hourArray[i-1];//if we have looped to the hour value, then that is the string hour value we are looking for
+        
+        
+            int i;
+            String hourString="";//initiates the hour string to an empty string
+            for(i=0;i<hourArray.length;i++){
+                if(i==hour){
+                    hourString=hourArray[i-1];//if we have looped to the hour value, then that is the string hour value we are looking for
+                }
+            
             }
-           
-        }
-        System.out.println("the hour is: "+hourString);
+            String minuteString="";//empty string before finance
 
+        }    
+       
         
     }
     
