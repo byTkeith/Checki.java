@@ -32,9 +32,11 @@ public class Converter {
             }
             String minuteString="";//empty string before finance
             int j;
+            int minuteCount=0;
             for(j=0;j<minuteArray.length;j++){
                 if(j==(minute/5)){//divided by five because seconds is a multiple of 5
                     minuteString=minuteArray[j];
+                    minuteCount++;
 
                 }
             }
@@ -44,7 +46,7 @@ public class Converter {
             else if(minuteString.equals(minuteArray[0]) && minute==0){
              System.out.println(hour+" "+minuteArray[0]);
             }
-            else if(minuteString.equals(minuteArray[1]) || minuteString.equals(minuteArray[2])){
+            else if(minuteCount>0 && minuteCount<7 && minute%5!=0){
                 System.out.println("about "+minuteString+" past "+hour);
             }
 
