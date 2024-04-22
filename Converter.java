@@ -46,17 +46,17 @@ public class Converter {
             else if(minuteString.equals(minuteArray[0]) && minute==0){
              System.out.println(hourString+" "+minuteArray[0]);
             }
-            else if(minuteCount>0 && minuteCount<7 && minute%5!=0 && minute<30){
+            else if(minuteCount>0 && minuteCount<7 && minute%5!=0 && minute<32){
                 System.out.println("about "+minuteString+" past "+hourString);
             }
-            else if(minuteCount>0 && minuteCount<7 && minute%5==0 && minute<30){
+            else if(minuteCount>0 && minuteCount<7 && minute%5==0 && minute<32){
                 System.out.println(minuteString+" past "+hourString);
             }
-            else if(minuteCount>0 && minute%5!=0 && minute>30){
-                System.out.println("about "+minuteString+" to "+(hourArray[hour+1]));
+            else if(minuteCount>0 && minute%5!=0 && minute>31){
+                System.out.println("about "+minuteString+" to "+(hourArray[hour]));
             }
-            else if(minuteCount>0 && minute%5==0 && minute>30){
-                System.out.println(minuteString+" to "+(hourArray[hour+1]));
+            else if(minuteCount>0 && minute%5==0 && minute>31){
+                System.out.println(minuteString+" to "+(hourArray[hour]));
             }
 
 
@@ -69,7 +69,7 @@ public class Converter {
             System.out.println("Enter a time or 'quit':");
             input= scanner.nextLine();
 
-        }    
+        }System.out.println("Done");   
        
         
     }
