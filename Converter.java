@@ -18,8 +18,10 @@ public class Converter {
              */
             int i;
             String hourString="";//initiates the hour string to an empty string
-            for(i=0;i<hour;i++){
-
+            for(i=1;i<hour;i++){
+                if(i==hour){
+                    hourString=hourArray[i];//if we have looped to the hour value, then that is the string hour value we are looking for
+                }
             }
 
         }
