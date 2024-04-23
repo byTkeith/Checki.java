@@ -3,7 +3,7 @@ import java.io.*;
 public class Convertor {
     public static void main(String[] args) {
         String[] hourArray={"one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen"}; 
-        String[] minuteArray={"o'clock","five","ten","quarter","twenty","twenty-five","half","twenty-five","twenty","quarter","ten","five","o'clock"};
+        String[] minuteArray={"o'clock","five","ten","quarter","twenty","twenty-five","half","twenty-five","twenty","quarter","five","o'clock"};
         Scanner scanner= new Scanner(System.in);
         System.out.println("Enter a time or 'quit':");
         String input=scanner.nextLine();
@@ -41,7 +41,7 @@ public class Convertor {
                 }
             }
             if(minuteString.equals(minuteArray[0]) && minute!=0){
-                System.out.println("about "+hourString+" "+minuteArray[0]);
+                System.out.println("about "+hourArray[hour]+" "+minuteArray[0]);
             }
             else if(minuteString.equals(minuteArray[0]) && minute==0){
              System.out.println(hourString+" "+minuteArray[0]);
@@ -57,10 +57,10 @@ public class Convertor {
             }
             else if(minuteCount>0 && minute%5!=0 && minute>31){
                 if(minute%5>=3 && !minuteArray[minuteCount+1].equals(minuteArray[0])){//if the mood is greater or equal to 3 but the next string not equal to o clock the move to the next value
-                    System.out.println("about "+minuteArray[minuteCount+1]+" to "+hourArray[hour]);//the the moode is cgraeter or equal to the value then we can move to the neext valu in the string of the time in minutes
+                    System.out.println("about "+minuteArray[minuteCount]+" to "+hourArray[hour]);//the the moode is cgraeter or equal to the value then we can move to the neext valu in the string of the time in minutes
 
                 }
-                else if(minute%5>=3 && minuteArray[minuteCount+1].equals(minuteArray[0]))System.out.println(hourArray[hour+1]+" "+minuteString);//if the next value is in fact o' clock the the entire valu changes
+                else if(minute%5>=3 && minuteArray[minuteCount+1].equals(minuteArray[0])){System.out.println(hourArray[hour+1]+" "+minuteString);}//if the next value is in fact o' clock the the entire valu changes
             }
             else if(minuteCount>0 && minute%5==0 && minute>31){
                 System.out.println(minuteString+" to "+(hourArray[hour]));
