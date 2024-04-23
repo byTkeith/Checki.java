@@ -1,9 +1,9 @@
 import java.util.*;
 import java.io.*;
-public class Converter {
+public class Convertor {
     public static void main(String[] args) {
         String[] hourArray={"one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen"}; 
-        String[] minuteArray={"o'clock","five","ten","quater","twenty","twenty-five","half","twenty-five","twenty","quarter","ten","five","o'clock"};
+        String[] minuteArray={"o'clock","five","ten","quarter","twenty","twenty-five","half","twenty-five","twenty","quarter","ten","five","o'clock"};
         Scanner scanner= new Scanner(System.in);
         System.out.println("Enter a time or 'quit':");
         String input=scanner.nextLine();
@@ -47,12 +47,16 @@ public class Converter {
              System.out.println(hourString+" "+minuteArray[0]);
             }
             else if(minuteCount>0 && minuteCount<7 && minute%5!=0 && minute<32){
-                System.out.println("about "+minuteString+" past "+hourString);
+                if(minute%5>=3){
+                    System.out.println("about "+minuteArray[minuteCount+1]+" past "+hourString);
+                }
+                else if(minute%5<=3){System.out.println("about "+minuteString+" past "+hourString);}
             }
             else if(minuteCount>0 && minuteCount<7 && minute%5==0 && minute<32){
                 System.out.println(minuteString+" past "+hourString);
             }
             else if(minuteCount>0 && minute%5!=0 && minute>31){
+                if(minute%5>=3 && !minuteArray[minuteCount+1].equals(minuteArray[0])){}
                 System.out.println("about "+minuteString+" to "+(hourArray[hour]));
             }
             else if(minuteCount>0 && minute%5==0 && minute>31){
