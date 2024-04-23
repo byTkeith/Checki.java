@@ -48,7 +48,7 @@ public class Convertor {
             }
             else if(minuteCount>0 && minuteCount<7 && minute%5!=0 && minute<32){
                 if(minute%5>=3){
-                    System.out.println("about "+minuteArray[minute+(minute%5)]+" past "+hourString);
+                    System.out.println("about "+minuteArray[minute+(minute%5)]+" past "+hourString);//in actual fact the number of times 5 enters a minute plus the remainder gives the position of the string minute
                 }
                 else if(minute%5<=3){System.out.println("about "+minuteString+" past "+hourString);}
             }
